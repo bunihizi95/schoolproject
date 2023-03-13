@@ -48,21 +48,11 @@
             <option hidden>User Type</option>
             <option value="Teacher">Teacher</option>
             <option value="Student">Student<option>
+            <option value="Admin">Administrator<option>
           </select>
         </div>
         
-        <div class="column">
-          <div class="select-box">
-            <select multiple name="lessons[]" >
-              <option hidden>Select lessons</option>
-              <option value="Mathematics">Mathematics</option>
-              <option value="History">History</option>
-              <option value="Physics">Physics</option>
-              <option value="Chemistry">Chemistry</option>
-              <option value="Biology">Biology</option>
-            </select>
-          </div>
-          <div class="select-box">
+        <div class="select-box">
             <select multiple name="subjects[]" >
               <option hidden>Select subjects</option>
               <option value="Mathematics">Mathematics</option>
@@ -71,7 +61,6 @@
               <option value="Chemistry">Chemistry</option>
               <option value="Biology">Biology</option>
             </select>
-          </div>
         </div>
 
         <div class="input-box address">

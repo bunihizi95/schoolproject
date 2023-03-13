@@ -10,11 +10,8 @@
         $Gender = mysqli_real_escape_string($con,$_POST['gender']);
         $User = mysqli_real_escape_string($con,$_POST['user']);
 
-        $Lessons = $_POST["lessons"];
-        $lesson = "";
-        foreach($Lessons as $row){
-          $lesson .= $row . ",";
-        }
+        
+        
         $subjects = $_POST["subjects"];
         $subject = "";
         foreach($subjects as $row){
@@ -37,7 +34,7 @@
             else
             {
                 $pass=md5($Password);
-                $query = "INSERT INTO school VALUES ('','$FirstName','$LastName','$Email','$Gender','$User','$lesson','$subject','$pass')";
+                $query = "INSERT INTO school VALUES ('','$FirstName','$LastName','$Email','$Gender','$User','$subject','$pass')";
                 $result = mysqli_query($con,$query);
 
                 if($result)
@@ -51,7 +48,7 @@
                 }
             }
         }
-    } else
+    }else
     {
         echo ' nothing ';
     }

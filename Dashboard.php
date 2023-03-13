@@ -1,6 +1,6 @@
 <?php
- session_start();
- session_destroy();
+ //session_start();
+ //session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@
 </head>
 <body style="margin: 50px;">
   <h1>My Data</h1>
+
   <table class="table">
     <thead>
       <tr>
@@ -21,16 +22,15 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>User</th>
-        <th>Lessons</th>
         <th>Subjects</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <?php
-        session_start ();
-        if(!isset($_SESSION["Email"]))
-	         header("location:index.php"); 
+        //session_start ();
+        //if(!isset($_SESSION["Email"]))
+	         //header("location:index.php"); 
 
         require_once('config.php');
 
@@ -48,7 +48,6 @@
           <td>". $row["LastName"] ."</td>
           <td>". $row["Email"] ."</td>
           <td>". $row["User"] ."</td>
-          <td>". $row["Lessons"] ."</td>
           <td>". $row["Subjects"] ."</td>
           <td>
             <a class='btn btn-primary btn-sm' href='update'>Update</a>

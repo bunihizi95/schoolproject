@@ -1,5 +1,5 @@
 <?php
-  session_start (); 
+  //session_start (); 
   require_once('config.php');
   
   if(isset($_POST["Login"]))  
@@ -17,9 +17,43 @@
             $result = mysqli_query($con, $query);  
             if(mysqli_num_rows($result) > 0)  
             { 
-                 session_start (); 
-                 $_SESSION["Email"] = $Email;  
-                 header('Location: Dashboard.php');  
+               $row = $result->fetch_assoc();
+
+               if ($row["User"]=='Student' || 'Teacher') {
+
+                    echo "
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                      <meta charset='UTF-8'>
+                      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+                      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                      <title> Home </title>
+                      <link href='student.css' rel='stylesheet'>
+                    </head>
+                    <body>
+                    <div class='container'>
+                    <div class='names'>
+                    <p><strong>". $row["FirstName"] ."  ". $row["LastName"] ."</strong></p>
+                    </div>
+                    <div>
+                    <p> I am a <b><i>". $row["User"] ."</i></b></p>
+                    </div>
+                    <p>These are my subjects</p><br>
+                    <p>". $row["Subjects"] ."</p><br>
+                    <a href='index.php'>Logout</a>
+                    </div>
+                    </body>
+                    </html>
+                     
+                    ";
+                    
+                   // header('Location: student.php');
+               }else {
+                    header('Location: Dashboard.php');
+               } 
+                 //$_SESSION["Email"] = $Email;  
+                   
             }  
             else  
             {  
