@@ -40,7 +40,7 @@
                 if($result)
                 {
                     echo ' Your Record Has Been Saved in the Database ';
-                    header('Location: http://localhost/newschool/Dashboard.php');
+                    header('Location: http://localhost/newschool/index.php');
                 }
                 else
                 {
